@@ -7,7 +7,7 @@
       this.monsters = [];
       this.heros = [];
       this.princess = [];
-      this.monstersCaught = 0;
+      this.princessSaved = 0;
 
       this.addMonsters();
   };
@@ -30,8 +30,8 @@
 
   Game.prototype.randomPosition = function () {
     return [
-      Game.DIM_X * Math.random(),
-      Game.DIM_Y * Math.random()
+      (Game.DIM_X - 30) * Math.random(),
+      (Game.DIM_Y - 30) * Math.random()
     ];
   };
 
@@ -165,7 +165,7 @@
     ctx.font = "24px Helvetica";
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
-    ctx.fillText("Monsters caught: " + this.monstersCaught, 32, 32);
+    ctx.fillText("Princesses saved: " + this.princessSaved, 32, 32);
 
     this.allObjects().forEach(function (object) {
       ctx.drawImage(
@@ -204,7 +204,8 @@
   };
 
   Game.prototype.gameOver = function () {
-    prompt("Game over");
+    alert("Game over! Great job!");
+    location.reload();
   };
 
 

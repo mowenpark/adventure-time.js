@@ -12,7 +12,7 @@
 
    MovingObject.prototype.collideWith = function (otherObject) {
      if ((this instanceof window.AdventureTime.Hero) && (otherObject instanceof window.AdventureTime.Princess)) {
-       this.game.monstersCaught += 1;
+       this.game.princessSaved += 1;
        this.game.remove(otherObject);
      } else if ((this instanceof window.AdventureTime.Hero) && (otherObject instanceof window.AdventureTime.Monster)) {
        this.game.gameOver();
