@@ -4,6 +4,10 @@ Welcome to Adventure Time, where you avoid monsters and save princesses. Use the
 keys to move Finn, your character, around the screen. But be careful, for every princess
 you save, another monster is added to the game.
 
+Play it at [AdventureTime][heroku]!
+
+[heroku]:https://serene-scrubland-91153.herokuapp.com/
+
 ##Overview
 
 The AdventureTime game is decomposed into the following classes/source-files:
@@ -28,3 +32,13 @@ The AdventureTime game is decomposed into the following classes/source-files:
   * Stores a canvas context to draw the game into.
   * Installs key listeners to move your hero.
   * Installs a timer to call `Game#step`.
+
+##Gameplay
+
+Start!
+
+![gameplay image 1](/public/images/adventure_time_gameplay1.png)
+
+Try to save as many princesses as you can!
+
+![gameplay image 2](/public/images/adventure_time_gameplay.png)
