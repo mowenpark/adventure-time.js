@@ -11,9 +11,11 @@
    };
 
    MovingObject.prototype.collideWith = function (otherObject) {
-     if (otherObject instanceof window.AdventureTime.Monster) {
+     if ((this instanceof window.AdventureTime.Hero) && (otherObject instanceof window.AdventureTime.Princess)) {
        this.game.monstersCaught += 1;
        this.game.remove(otherObject);
+     } else if ((this instanceof window.AdventureTime.Hero) && (otherObject instanceof window.AdventureTime.Monster)) {
+
      }
    };
 

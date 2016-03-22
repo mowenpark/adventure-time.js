@@ -7,6 +7,7 @@
     this.ctx = ctx;
     this.game = game;
     this.hero = this.game.addHero();
+    this.princess = this.game.addPrincess();
   };
 
   GameView.prototype.bindKeyHandlers = function () {

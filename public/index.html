@@ -3,28 +3,35 @@
     <title>Adventure Time</title>
   </head>
   <body>
-    <canvas id="canvas" style="padding: 0px; margin:0 auto; display: block"></canvas>
+    <img src="images/adventure-time.png" alt="adventure time banner" style="padding: 0px; margin:0 auto; display: block; height: 160px">
+
+    <div>
+      <canvas id="canvas" style="padding: 0px; margin:0 auto; display: block"></canvas>
+
+      <img src="images/Arrow-keys.jpg" alt="keys image">
+    </div>
 
     <script type="application/javascript" src="lib/util.js"></script>
     <script type="application/javascript" src="lib/movingObject.js"></script>
     <script type="application/javascript" src="lib/hero.js"></script>
+    <script type="application/javascript" src="lib/princess.js"></script>
     <script type="application/javascript" src="lib/monster.js"></script>
     <script type="application/javascript" src="lib/game.js"></script>
     <script type="application/javascript" src="lib/gameView.js"></script>
 
+      <script>
 
-    <script>
+        (function () {
+          var canvas = document.getElementById('canvas');
+          canvas.width = AdventureTime.Game.DIM_X;
+          canvas.height = AdventureTime.Game.DIM_Y;
 
-      (function () {
-        var canvas = document.getElementById('canvas');
-        canvas.width = AdventureTime.Game.DIM_X;
-        canvas.height = AdventureTime.Game.DIM_Y;
+          var ctx = canvas.getContext('2d');
+          var game = new AdventureTime.Game();
+          new AdventureTime.GameView(game, ctx).start();
+        })();
 
-        var ctx = canvas.getContext('2d');
-        var game = new AdventureTime.Game();
-        new AdventureTime.GameView(game, ctx).start();
-      })();
+      </script>
 
-    </script>
   </body>
 </html>

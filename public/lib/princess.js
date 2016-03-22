@@ -15,24 +15,24 @@
     return [vec[0] * m, vec[1] * m];
   };
 
-  var Monster = window.AdventureTime.Monster = function (options) {
+  var Princess = window.AdventureTime.Princess = function (options) {
     options.pos = options.pos || options.game.randomPosition();
-    options.radius = 10;
+    options.radius = 20;
     options.vel = randomVec(50);
 
     this.image = options.image;
     this.height = options.height;
     this.width = options.width;
-    this.frameIndex = 0;
+    this.frameIndex = 1;
     this.tickCount = 0;
     this.ticksPerFrame = 10;
     this.numberOfFrames = options.numberOfFrames;
     window.AdventureTime.MovingObject.call(this, options);
   };
 
-  window.AdventureTime.Util.inherits(Monster, window.AdventureTime.MovingObject);
+  window.AdventureTime.Util.inherits(Princess, window.AdventureTime.MovingObject);
 
-  Monster.prototype.update = function (modifier) {
+  Princess.prototype.update = function (modifier) {
 
     this.tickCount += 1;
 
@@ -48,7 +48,7 @@
              // Go to the next frame
              this.frameIndex += 1;
          } else {
-             this.frameIndex = 0;
+             this.frameIndex = 1;
          }
     }
 
@@ -62,9 +62,6 @@
 
     var offsetX = this.vel[0] * modifier,
         offsetY = this.vel[1] * modifier;
-
-
-    this.pos = [this.pos[0] + offsetX, this.pos[1] + offsetY];
 
   };
 
