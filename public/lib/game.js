@@ -12,11 +12,7 @@
       this.addMonsters();
   };
 
-  var num = prompt("How many monsters?");
-  while (typeof parseInt(num) !== "number") {
-    num = prompt("Please enter a number!");
-  }
-  Game.NUM_MONSTERS = parseInt(num);
+  Game.NUM_MONSTERS = 0;
   Game.DIM_X = 512;
   Game.DIM_Y = 480;
 
@@ -205,6 +201,10 @@
   Game.prototype.isOutOfBounds = function (pos) {
     return (pos[0] < 0) || (pos[1] < 0) ||
       (pos[0] > Game.DIM_X) || (pos[1] > Game.DIM_Y);
+  };
+
+  Game.prototype.gameOver = function () {
+    prompt("Game over");
   };
 
 

@@ -15,7 +15,7 @@
        this.game.monstersCaught += 1;
        this.game.remove(otherObject);
      } else if ((this instanceof window.AdventureTime.Hero) && (otherObject instanceof window.AdventureTime.Monster)) {
-
+       this.game.gameOver();
      }
    };
 

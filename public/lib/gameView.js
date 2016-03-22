@@ -41,4 +41,8 @@
     requestAnimationFrame(this.animate.bind(this));
   };
 
+  GameView.prototype.reset = function () {
+    window.reload();
+  };
+
 })();
